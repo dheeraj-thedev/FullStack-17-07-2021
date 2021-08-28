@@ -1,0 +1,52 @@
+
+
+
+
+/* Element Selector */
+/* many techniques that may pickup the element from the HTML document */
+header{
+    background-color: rgb(189, 54, 54) !important;
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: wheat;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+nav{
+    float: left;
+    width: 30%;
+    height: 400px;
+    background-color: #ccc;
+    padding: 20px;
+}
+
+nav ul{
+    list-style-type: none;
+   
+}
+nav ul li {
+    margin: 15px;
+}
+
+article ul{
+    list-style: lower-roman;
+}
+
+article{
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: white;
+    height: 400px;
+}
+
+footer{
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: wheat;
+}
