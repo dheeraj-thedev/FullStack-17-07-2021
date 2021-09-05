@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./js/index.js" ></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- // Greeting according to clients time 
+// GoodMorning
+// Afternoon 
+// evening -->
+ 
+ <!-- Whenever we use a Form it perfoms a post back  -->
+    <label> Enter a Number </label>
+        <input type="number"  name="number" id="number">
+        <button id="btnProcess">Process</button>
+        <div id="messageId"></div>
+    
+
+    <script>
+
+        
+            // var y = 100;
+            // console.log( "The type of Y is : "+typeof(y) + " The value of y is "+ y);  // conatenated variable value with some String
+            // y ="I am a developer";
+            // console.log( "The type of Y is :"+typeof(y) + "The value of y is "+ y);
+            // y =false;
+            // console.log( "The type of Y is :"+typeof(y) + "The value of y is "+ y);
+            
+
+        //    var age = 25; ///
+        //    // 1 variable Dec |=
+        //    var welcomeMessage = (age<18) ? "NO You can not enter as your age is "+ age : "Welcome you can Join us "+ age;   
+        //     console.log(welcomeMessage);
+
+
+      
+
+            var btnProcess = document.getElementById("btnProcess");
+            btnProcess.onclick= function(){
+                var age =  Number( document.getElementById("number").value); ///
+           // 1 variable Dec |=
+                // Type casting | Type conversion
+
+           //
+                if((age>0) && (age<80)){ // 
+                var welcomeMessage = (age<18) ? "NO You can not enter as your age is "+ age : "Welcome you can Join us "+ age;   
+                console.log(welcomeMessage);
+                alert(welcomeMessage);    
+                }else{
+                    alert("Please enter a valid age ");
+                }
+            }
+           
+        // var numberToBeProcessed=7;
+        // var countIteration=0;
+        // while(countIteration<10){
+        //     console.log(numberToBeProcessed + " * "+ countIteration +"  =  "+(numberToBeProcessed*countIteration) );
+        //     countIteration++;
+        // }
+
+        // var numberToBeProcessed=7;
+        // var countIteration=1;
+        // while(countIteration<=10){
+        //     console.log(numberToBeProcessed + " * "+ countIteration +"  =  "+(numberToBeProcessed*countIteration) );
+        //     countIteration++;
+        // }
+
+        //  var numberToBeProcessed=7;
+        // var countIteration=0;
+        // while(countIteration<10){
+        //     console.log(numberToBeProcessed + " * "+ (countIteration+1) +"  =  "+(numberToBeProcessed*(countIteration+1)) );
+        //     countIteration++;
+        // }
+
+        // LOOPS
+            // While 
+            // Do while 
+            // FOr 
+            // For each 
+            // For of 
+
+        // 7 * 1 = 7
+        // 7 * 2 = 14
+        // 7 * 3 = 21
+
+        // Ivan Loop
+        // 
+
+
+    </script>
+</body>
+</html>
