@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<link  rel="stylesheet"  href="./css/flag-icon.css">
+<link  rel="stylesheet"  href="./css/flag-icon.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            
+                   <button type="button" style="border-radius:20px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-light"><span class="label label-success"><span id="span-flag" class="flag-icon flag-icon-gr"></span> GR</span> <span id="currency-btn-label"> EURO </span> <i id='icon-language' class="bi bi-egg"></i></button>
+                   <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> -->
+                    <!-- Launch static backdrop modal
+                  </button>  -->
+          </div>
+        </div>
+      </nav>
+
+    </header>
+
+    <section  class="">
+        <article id="cards-main" class="row">
+
+        </article>
+    </section>
+      
+
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Change   Country   &   Currency
+        </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+              <label  class="form-label" for="select-country">Country</label> 
+              <select id="select-country"  class="form-control" >
+                <option>INDIA</option>
+                <option>JAPAN</option>
+                <option>RUSSIA</option>
+                <option>US</option>
+                <option>BRITAIN</option>
+                <option>CHINA</option>
+              </select> 
+          </div>
+          <div class="row"><label   class="form-label"  for="select-currency">Currency</label> 
+            <select id="select-currency" class="form-control">
+              <option>INR</option>
+              <option>USD</option>
+              <option>GBP</option>
+              <option>EURO</option>
+          </select></div>
+          <div class="row"> <label class="form-label" for="select-language">Language</label><select id="select-language"  class="form-control"><option>EN-US</option></select></div>
+
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success" id="btn-change">Change</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+  
+  <script>
+    // We need handle click on save currency 
+    // on that handle we need to read all selected options 
+    // and we nedd to update icons based on user selection
+    // change the currency Name as well 
+    // change the language icons
+    
+    var btnChange = document.getElementById("btn-change");
+    btnChange.onclick= function(e){
+    var currency = document.getElementById('select-currency')
+    var country=document.getElementById('select-country')
+    var language=document.getElementById('select-language')
+    var currencyLabel = document.getElementById('currency-btn-label')
+    currencyLabel.innerText= currency.options[currency.selectedIndex].text
+    
+    var mapCountryConfig={
+        "INDIA":"flag-icon-in",
+        "JAPAN": "flag-icon-ae",
+        "CHINA": "flag-icon-am", 
+        "US": "flag-icon-ao US",
+        "BRITAIN":"flag-icon-gb",
+        "RUSSIA": "flag-icon-ar"
+    }
+    document.getElementById("span-flag").className='';
+    document.getElementById("span-flag").className='flag-icon '+mapCountryConfig[country.options[country.selectedIndex].text]
+    }
+    
+    
+    </script>
+    
+
+
+    <script>
+
+
+
+
+var dashBoardStr='';
+
+fetch('https://api.github.com/users/dheeraj-thedev/followers')
+.then(response=>response.json())
+.then(json=>{
+//console.log(json)
+ // json.forEach(element => {
+
+  for(let i =0 ;i< json.length;i++){
+    //console.log(element.avatar_url)
+    dashBoardStr+= `<div class="card col-3 col-md-3 col-sm-12 m-3" >
+  <img style='border-radius:50%' src="${json[i].avatar_url}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">${json[i].login}</p>
+  </div>
+</div>`;
+document.getElementById("cards-main").innerHTML=dashBoardStr;
+}
+
+})
+.catch(error=>console.log(error))
+
+
+
+    </script>
+
+
+</body>
+</html>
